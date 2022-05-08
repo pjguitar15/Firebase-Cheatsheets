@@ -68,7 +68,7 @@ const updateUser = async (id, item) => {
 ### Read
 ```javascript
 useEffect(() => {
-    const q = query(collectionRef, orderBy('timestamp', 'item'))
+    const q = query(collectionRef, orderBy('timestamp', 'desc'))
     const getUsers = async () => {
       const data = await getDocs(q);
       setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
