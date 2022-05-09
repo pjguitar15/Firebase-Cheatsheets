@@ -1,3 +1,8 @@
+### Install Firebase
+```
+npm install --save firebase
+```
+
 ### Configuration
 > separate its file (firebase-config.js)
 ```javascript
