@@ -36,7 +36,7 @@ import {
   doc,
   serverTimestamp,
   query, 
-  orderby
+  orderBy
 } from "firebase/firestore";
 ```
 
