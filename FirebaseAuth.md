@@ -5,7 +5,7 @@ import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword }
 
 ### Sign Up
 ```javascript
-const handleAction = (id) => {
+const handleAction = () => {
   const authentication = getAuth();  
   createUserWithEmailAndPassword(authentication, emailInput, passwordInput)
     .then((response) => {
@@ -20,7 +20,7 @@ const handleAction = (id) => {
 
 ### Log in
 ```javascript
-const handleAction = (id) => {
+const handleAction = () => {
   const authentication = getAuth();  
   signInWithEmailAndPassword(authentication, email, password)
       .then((response) => {
