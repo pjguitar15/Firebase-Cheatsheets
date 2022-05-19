@@ -12,6 +12,9 @@ const handleAction = (id) => {
       navigate('/home')
       sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
     })  
+    .catch((err) => {
+        console.log(err)
+    })
 }
 ```
 
@@ -23,6 +26,9 @@ const handleAction = (id) => {
       .then((response) => {
         navigate('/home')
         sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
+      })
+      .catch((err) => {
+        console.log(err)
       })
 }
 ```
