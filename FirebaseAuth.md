@@ -61,7 +61,8 @@ const handleLogout = () => {
 ### Private Route Functionality
 > You just basically navigate to the private page only if token exists
 ```javascript
-// make sure to add this to both protected page and login/signup. just to prevent users from going back to login, when sessionStorate still exists
+// make sure to add this to both protected page and login/signup.
+// just to prevent users from going back to login, when sessionStorate still exists
 useEffect(() => {
   let authToken = sessionStorage.getItem('Auth Token')
   if (authToken) {
