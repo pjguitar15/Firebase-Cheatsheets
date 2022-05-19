@@ -49,6 +49,15 @@ const handleAction = () => {
 }
 ```
 
+### Log out
+```javascript
+const handleLogout = () => {
+    // destroy token
+    sessionStorage.removeItem('Auth Token')
+    navigate('/')
+}
+```
+
 ### Private Route Functionality
 > You just basically navigate to the private page only if token exists
 ```javascript
