@@ -1,3 +1,32 @@
+### What to import
+```javascript
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } 
+```
+
+### Sign Up
+```javascript
+const handleAction = (id) => {
+  const authentication = getAuth();  
+  createUserWithEmailAndPassword(authentication, emailInput, passwordInput)
+    .then((response) => {
+      navigate('/home')
+      sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
+    })  
+}
+```
+
+### Log in
+```javascript
+const handleAction = (id) => {
+  const authentication = getAuth();  
+  signInWithEmailAndPassword(authentication, email, password)
+      .then((response) => {
+        navigate('/home')
+        sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
+      })
+}
+```
+
 ### Private Route Functionality
 > You just basically navigate to the private page only if token exists
 ```javascript
