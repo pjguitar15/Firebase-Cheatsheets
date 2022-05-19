@@ -18,6 +18,8 @@ export const app = initializeApp(firebaseConfig);
 ### Sign Up
 ```javascript
 import { app } from './firebase-config'
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
+
 const handleAction = () => {
   const authentication = getAuth(app);  
   createUserWithEmailAndPassword(authentication, emailInput, passwordInput)
@@ -35,6 +37,8 @@ const handleAction = () => {
 ### Log in
 ```javascript
 import { app } from './firebase-config'
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+
 const handleAction = () => {
   const authentication = getAuth(app);  
   signInWithEmailAndPassword(authentication, email, password)
