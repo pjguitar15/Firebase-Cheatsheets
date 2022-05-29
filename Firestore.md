@@ -47,7 +47,7 @@ const collectionRef = collection(db, "collectionName");
 
 ### Create
 ```javascript
-const createUser = async () => {
+const addItem = async () => {
     await addDoc(collectionRef, { item: itemName, timestamp: serverTimestamp() });
 };
 ```
@@ -55,8 +55,8 @@ const createUser = async () => {
 
 ### Update
 ```javascript
-const updateUser = async (id, item) => {
-    const userDoc = doc(db, "users", id);
+const updateItem = async (id, item) => {
+    const userDoc = doc(db, "items", id);
     const newFields = { item: item + 1 };
     await updateDoc(userDoc, newFields);
 };
@@ -64,7 +64,7 @@ const updateUser = async (id, item) => {
 
 ### Delete
 ```javascript
- const deleteUser = async (id) => {
+ const deleteItem = async (id) => {
     const userDoc = doc(db, "collectionName", id);
     await deleteDoc(userDoc);
 };
@@ -74,11 +74,11 @@ const updateUser = async (id, item) => {
 ```javascript
 useEffect(() => {
     const q = query(collectionRef, orderBy('timestamp', 'desc'))
-    const getUsers = async () => {
+    const getData = async () => {
       const data = await getDocs(q);
       setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
 
-    getUsers();
+    getData();
 }, []);
 ```
