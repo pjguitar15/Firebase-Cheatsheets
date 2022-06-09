@@ -80,13 +80,12 @@ useEffect(() => {
 
 ### Get Email
 ```javascript
-getAuth()
-    .getUser(uid)
-    .then((userRecord) => {
-    // See the UserRecord reference doc for the contents of userRecord.
-    console.log(`Successfully fetched user data: ${userRecord.toJSON()}`);
-    })
-    .catch((error) => {
-    console.log('Error fetching user data:', error);
-    });
+getAuth().onAuthStateChanged((user) => {
+    if (user) {
+      console.log('This is the user: ', user)
+    } else {
+      // No user is signed in.
+      console.log('There is no logged in user')
+    }
+  })
 ```
